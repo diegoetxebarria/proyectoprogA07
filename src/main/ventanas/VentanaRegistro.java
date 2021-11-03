@@ -75,6 +75,64 @@ public class VentanaRegistro extends JFrame {
 		btnAceptar.setBounds(145, 247, 117, 29);
 		getContentPane().add(btnAceptar);
 
+		btnAceptar.addActionListener(new ActionListener() {
+			//Aqui añadiremos los datos a la base de datos
 		
+		});
+
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(341, 247, 117, 29);
+		getContentPane().add(btnCancelar);
+
+		// Esto se lanza cuando alguien pulsa el boton de Cancelar
+		btnCancelar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+
+		JLabel lblGenero = new JLabel("Genero:");
+		lblGenero.setBounds(72, 168, 86, 14);
+		getContentPane().add(lblGenero);
+
+		textField_nombre = new JTextField();
+		textField_nombre.setBounds(156, 29, 106, 20);
+		getContentPane().add(textField_nombre);
+		textField_nombre.setColumns(10);
+
+		List<Integer> lstDia = new ArrayList<>();
+		int dia = (31);
+		for (int i = 1; i <= dia; i++) {
+			lstDia.add(i);
+		}
+
+		cbDia = new JComboBox<Object>();
+		cbDia.setModel(
+				(ComboBoxModel<Object>) new DefaultComboBoxModel<Object>(lstDia.toArray(new Integer[lstDia.size()])));
+		cbDia.setBounds(72, 138, 78, 20);
+		getContentPane().add(cbDia);
+
+	
+
+		List<Integer> lstAnyos = new ArrayList<>();
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		for (int i = 1900; i <= year; i++) {
+			lstAnyos.add(i);
+		}
+
+		cbAnyo = new JComboBox<Object>();
+		cbAnyo.setModel((ComboBoxModel<Object>) new DefaultComboBoxModel<Object>(
+				lstAnyos.toArray(new Integer[lstAnyos.size()])));
+		cbAnyo.setBounds(361, 137, 128, 20);
+		getContentPane().add(cbAnyo);
+
+	}
+
+	public static void main(String[] args) {
+		VentanaRegistro v = new VentanaRegistro();
+		v.setVisible(true);
+
+	}
 }
 
