@@ -113,7 +113,21 @@ public class VentanaRegistro extends JFrame {
 		cbDia.setBounds(72, 138, 78, 20);
 		getContentPane().add(cbDia);
 
-	
+		comboBox_mes = new JComboBox<String>();
+		comboBox_mes.setBounds(174, 137, 159, 20);
+		getContentPane().add(comboBox_mes);
+		comboBox_mes.addItem(meses[0]);
+		comboBox_mes.addItem(meses[1]);
+		comboBox_mes.addItem(meses[2]);
+		comboBox_mes.addItem(meses[3]);
+		comboBox_mes.addItem(meses[4]);
+		comboBox_mes.addItem(meses[5]);
+		comboBox_mes.addItem(meses[6]);
+		comboBox_mes.addItem(meses[7]);
+		comboBox_mes.addItem(meses[8]);
+		comboBox_mes.addItem(meses[9]);
+		comboBox_mes.addItem(meses[10]);
+		comboBox_mes.addItem(meses[11]);
 
 		List<Integer> lstAnyos = new ArrayList<>();
 		int year = Calendar.getInstance().get(Calendar.YEAR);
